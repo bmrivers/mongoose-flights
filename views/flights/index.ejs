@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>List of Flights</title>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="/flights">All Flights</a>
+        <a href="/flights/new">Add Flight</a>
+    </nav>
+</header>
+<table id="list">
+    <thead>
+        <tr>
+            <th>Flight Number</th>
+            <th>Airline</th>
+            <th>Departs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% flights.forEach(function(f) { %>
+        <tr>
+            <td><%= f.flightNum %></td>
+            <td><%= f.airline %></td>
+            <td><%= f.departDate %></td>
+        </tr>
+        <% }) %>
+    </tbody>
+  </table>
+
+  </body>
+  </html>
+
