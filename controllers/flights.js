@@ -24,7 +24,6 @@ function create(req, res) {
         if (req.body[key] === '') delete req.body[key];
     }
     var flight = new Flight(req.body, req.params.id);
-    console.log(flight)
     flight.save(function(err) {
         if (err) {
             console.log(err);

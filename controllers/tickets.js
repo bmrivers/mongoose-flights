@@ -22,11 +22,7 @@ function create(req, res) {
 }*/
 
 function create(req, res, next) {
-    console.log(req.body);
-    Flight.findById(req.params.id, function(err, flight) {
-        //flight.tickets.push(req.body);
-        Ticket.create({flight: flight._id, seat: req.body.seat, price: req.body.price}, function(err, ticket) {
-            res.redirect(`/flights/${flight._id}`);
-        });
+    Ticket.create({flight: req.params.id, seat: req.body.seat, price: req.body.price}, function(err, ticket) {
+        res.redirect(`/flights/${ticket.flight}`);
     });
 }
