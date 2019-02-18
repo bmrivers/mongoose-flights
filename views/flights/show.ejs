@@ -1,0 +1,94 @@
+<%- include('../partials/header') %>
+  <h1><%= title %></h1>
+    <table class="table">
+        <thead>
+            <th>Flight No.</th>
+            <th>Airline</th>
+            <th>Departs</th>
+            <th>From</th>
+        </thead>
+        <tbody>
+            <tr scope="row">
+                <td><%= flight.flightNum %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.departs.toLocaleDateString() %><Br>
+                  <%= flight.departs.toLocaleTimeString() %></td>
+                <td><%= flight.airport %></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3>Destination</h3>
+    <div class="container">
+        <div class=row>
+          <div class="col-sm">
+        <% if (flight.destinations.length) { %>
+            <% console.log(flight.destinations) %>
+            <table class="table">
+              <thead>
+                <tr>
+                    <th>Airport</th>
+                  <th>Date & Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% flight.destinations.forEach(function(d) { %>
+                  <tr>
+                    <td><%= d.airport %></td>
+                    <td><%= d.arrives.toLocaleDateString() %><Br>
+                      <%= d.arrives.toLocaleTimeString() %></td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          <% } else { %>
+        <h5>No Destination Yet</h5>
+          <% } %>
+      </div>
+      <div class="col-sm">
+          <form id="add-destination-form" method="POST"
+          action="/flights/<%= flight._id %>/arrivals">
+          <label>Airport:
+          <select name="airport">
+              <option value="DAL">DAL</option>
+              <option value="AUS">AUS</option>
+              <option value="SEA">SEA</option>
+              <option value="LAX">LAX</option>
+              <option value="ORD">ORD</option>
+          </select>
+          </label><br>
+          <label>Arrival Date & Time:
+              <input type="datetime-local" name="arrives" placeholder="MM/DD/YYYY, 07:30 PM">
+          </label><br>
+          <input type="submit" value="Add Arrival">
+          </form>
+        </div>
+    </div>
+  </div>
+  <hr>
+  <Br>
+  <div>
+    <% if (tickets.length) { %>
+      <h3>List of Tickets for Flight <%= flight.flightNum %></h3>
+      <table class="table">
+        <thead>
+          <th>Seat</th>
+          <th>Price</th>
+        </thead>
+        <tbody>
+          
+          <%  tickets.forEach(function(t) { %>
+            <tr>
+              <td><%= t.seat %> </td>
+              <td>$<%= t.price %></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+        <%} else {%>
+          <h5>No Tickets Yet</h5>
+          <% } %>
+        <a href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
+  </div>
+</body>
+</html>

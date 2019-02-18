@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>List of Flights</title>
-</head>
-<body>
-<header>
-    <nav>
-        <a href="/flights">All Flights</a>
-        <a href="/flights/new">Add Flight</a>
-    </nav>
-</header>
-<table id="list">
+<%- include('../partials/header') %>
+<table id="list" class="table">
     <thead>
         <tr>
             <th>Flight Number</th>
             <th>Airline</th>
             <th>Departs</th>
+            <th>From</th>
         </tr>
     </thead>
     <tbody>
@@ -27,12 +13,15 @@
         <tr>
             <td><%= f.flightNum %></td>
             <td><%= f.airline %></td>
-            <td><%= f.departDate %></td>
-        </tr>
+            <td><%= f.departs.toLocaleDateString()%><br>
+                <%= f.departs.toLocaleTimeString()%></td>
+            <td><%= f.airport %></td>
+            <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
+            </tr>
         <% }) %>
     </tbody>
   </table>
-
+  <br><br>
   </body>
   </html>
 
