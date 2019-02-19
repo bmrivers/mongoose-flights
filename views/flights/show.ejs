@@ -26,7 +26,7 @@
               <table class="table">
                 <thead>
                   <tr>
-                      <th>Airport</th>
+                    <th>Airport</th>
                     <th>Date & Time</th>
                   </tr>
                 </thead>
@@ -48,7 +48,7 @@
             <form id="add-destination-form" method="POST"
             action="/flights/<%= flight._id %>/arrivals">
             <label>Airport:
-            <select name="airport">
+            <select required name="airport">
                 <option value="DAL">DAL</option>
                 <option value="AUS">AUS</option>
                 <option value="SEA">SEA</option>
@@ -57,7 +57,7 @@
             </select>
             </label><br>
             <label>Arrival Date & Time:
-                <input type="datetime-local" name="arrives" placeholder="MM/DD/YYYY, 07:30 PM">
+                <input required type="datetime-local" name="arrives" placeholder="MM/DD/YYYY, 07:30 PM">
             </label><br>
             <input type="submit" value="Add Arrival">
             </form>
@@ -89,5 +89,4 @@
           <a href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
     </div>
   </main>
-</body>
-</html>
+<%- include('../partials/footer') %>

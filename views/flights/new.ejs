@@ -3,10 +3,10 @@
     <form action="/flights" method="POST">
         <div class="form-group">
           <label>Flight Number
-            <input class="form-control" type="number" name="flightNum">
+            <input class="form-control" required type="number" name="flightNum">
           </label><br>
           <label>Airline
-            <select class="form-control" name="airline">
+            <select required class="form-control" name="airline">
               <option value="American">American</option>
               <option value="United">United</option>
               <option value="Southwest">Southwest</option>
@@ -15,7 +15,7 @@
           </label><br>
 
           <label>Airport
-            <select class="form-control" name="airport">
+            <select required class="form-control" name="airport">
               <option value="AUS">Austin</option>
               <option value="DAL">Dallas</option>
               <option value="LAX">Los Angeles</option>
@@ -31,5 +31,4 @@
         </div>
     </form>
   </main>
-</body>
-</html>
+<%- include('../partials/footer') %>

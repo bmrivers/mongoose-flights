@@ -2,13 +2,11 @@
     <main>
         <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets/new" method="POST">
             <div class="form-group" width="50%">
-                Seat: <input name="seat" class="form-control" pattern="[A-F][1-9]\d?" placeholder="A1"><br>
+                Seat: <input name="seat" required pattern="[A-F][1-9]\d?" placeholder="A10"><br>
                 Price: $<input name="price" type="number">
                 <br>
-            <!-- <input class="form-control btn-primary" type="submit" value="Add Ticket">-->
                 <button class="btn btn-primary" type="submit">Add Ticket</button>
             </div>
         </form>
     </main>
-</body>
-</html>
+<%- include('../partials/footer') %>
