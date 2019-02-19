@@ -1,12 +1,14 @@
 <%- include('../partials/header') %>
-    <h3>Add New Ticket</h3>
-    <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets/new" method="POST">
-        <div class="form-group">
-           Seat: <input class="form-control" name="seat" pattern="[A-F][1-9]\d?" placeholder="A1"><br>
-            Price: $<input name="price" type="number">
-            <br>
-            <input class="form-control" type="submit" value="Add Ticket">
-        </div>
-    </form>
+    <main>
+        <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets/new" method="POST">
+            <div class="form-group" width="50%">
+                Seat: <input name="seat" class="form-control" pattern="[A-F][1-9]\d?" placeholder="A1"><br>
+                Price: $<input name="price" type="number">
+                <br>
+            <!-- <input class="form-control btn-primary" type="submit" value="Add Ticket">-->
+                <button class="btn btn-primary" type="submit">Add Ticket</button>
+            </div>
+        </form>
+    </main>
 </body>
 </html>

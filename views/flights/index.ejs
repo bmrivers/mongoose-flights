@@ -1,27 +1,28 @@
 <%- include('../partials/header') %>
-<table id="list" class="table">
-    <thead>
-        <tr>
-            <th>Flight Number</th>
-            <th>Airline</th>
-            <th>Departs</th>
-            <th>From</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% flights.forEach(function(f) { %>
-        <tr>
-            <td><%= f.flightNum %></td>
-            <td><%= f.airline %></td>
-            <td><%= f.departs.toLocaleDateString()%><br>
-                <%= f.departs.toLocaleTimeString()%></td>
-            <td><%= f.airport %></td>
-            <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
-            </tr>
-        <% }) %>
-    </tbody>
-  </table>
-  <br><br>
+    <main>
+        <table id="list" class="table">
+            <thead>
+                <tr>
+                    <th>Flight Number</th>
+                    <th>Airline</th>
+                    <th>Departs</th>
+                    <th>From</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% flights.forEach(function(f) { %>
+                <tr>
+                    <td><%= f.flightNum %></td>
+                    <td><%= f.airline %></td>
+                    <td><%= f.departs.toLocaleDateString()%><br>
+                        <%= f.departs.toLocaleTimeString()%></td>
+                    <td><%= f.airport %></td>
+                    <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </main> 
   </body>
-  </html>
+</html>
 

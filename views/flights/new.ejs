@@ -1,34 +1,35 @@
 <%- include('../partials/header') %>
-  <h2><%= title %></h2>
-  <form action="/flights" method="POST">
-      <div class="form-group">
-        <label>Flight Number
-          <input class="form-control" type="number" name="flightNum">
-        </label><br>
-        <label>Airline
-          <select class="form-control" name="airline">
-            <option value="American">American</option>
-            <option value="United">United</option>
-            <option value="Southwest">Southwest</option>
-            <option value="Alaska">Alaska</option>
-          </select>
-        </label><br>
+  <main>
+    <form action="/flights" method="POST">
+        <div class="form-group">
+          <label>Flight Number
+            <input class="form-control" type="number" name="flightNum">
+          </label><br>
+          <label>Airline
+            <select class="form-control" name="airline">
+              <option value="American">American</option>
+              <option value="United">United</option>
+              <option value="Southwest">Southwest</option>
+              <option value="Alaska">Alaska</option>
+            </select>
+          </label><br>
 
-        <label>Airport
-          <select class="form-control" name="airport">
-            <option value="AUS">Austin</option>
-            <option value="DAL">Dallas</option>
-            <option value="LAX">Los Angeles</option>
-            <option value="SEA">Seattle</option>
-            <option value="ORD">Chicago</option>
-          </select>
-        </label>
-        <br>
-        <label>Departure Date:
-            <input class="form-control" type="datetime-local" name="departs" placeholder="MM/DD/YYYY, 07:30 PM">
-        </label><br>
-        <input type="submit" value="Add Flight">
-      </div>
-  </form>
+          <label>Airport
+            <select class="form-control" name="airport">
+              <option value="AUS">Austin</option>
+              <option value="DAL">Dallas</option>
+              <option value="LAX">Los Angeles</option>
+              <option value="SEA">Seattle</option>
+              <option value="ORD">Chicago</option>
+            </select>
+          </label>
+          <br>
+          <label>Departure Date:
+              <input class="form-control" type="datetime-local" name="departs" placeholder="MM/DD/YYYY, 07:30 PM">
+          </label><br>
+          <button class="btn btn-primary" type="submit">Add Flight</button>
+        </div>
+    </form>
+  </main>
 </body>
 </html>

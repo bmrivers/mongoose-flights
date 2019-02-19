@@ -2,13 +2,23 @@ html {
   background-color: lightgray;
 }
 body {
-  margin: 50px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.the-title {
+  padding-left: 20px;
+}
+
+main {
+  padding: 10px 20px; 
 }
 
 a {
   color: #00B7FF;
 }
+
 form {
   line-height: 30px;
 }
@@ -17,13 +27,17 @@ form {
   border: 1px solid black;
   border-radius: 20%;
 }
+nav > div {
+  margin-right: 70%;
+}
 
 nav {
-  margin: 20px 0px;
+  /* margin: 20px 0px; */
+  margin-bottom: 20px;
   height: 50px;
   background-color: #00B7FF;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
 }
 

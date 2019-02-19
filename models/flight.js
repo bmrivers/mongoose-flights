@@ -14,7 +14,7 @@ var destinationSchema = new Schema({
 var flightSchema = new Schema({
     airline: {
         type: String,
-        enum: ['American', 'Southwest', 'United'],
+        enum: ['American', 'Southwest', 'United', 'Alaska'],
     },
     airport: {
         type: String,
